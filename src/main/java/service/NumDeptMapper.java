@@ -52,4 +52,13 @@ public class NumDeptMapper implements DeptNumService {
 	public String findDept(String deptNum) {
 		return (deptMap.get(deptNum));
 	}
+
+	public Map<String, String> getDeptMap() {
+		return deptMap;
+	}
+
+	public String[][] getDeptArray() {
+		return deptArray;
+	}
+
 }
