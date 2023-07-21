@@ -1,5 +1,7 @@
 # departementJSPServletMVC
 
+Julien, Guilhem, Zakaria
+
 Il s'agit d'un projet web dynamique.
 Le but est de rechercher le nom d'un département par son numéro.
 Les servlets sont les contrôleurs, les beans, le modèle et les JSP, la vue.
