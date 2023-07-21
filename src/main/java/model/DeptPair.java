@@ -3,8 +3,10 @@ package model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name = "dept.fetch", query = "SELECT d FROM DeptPair d WHERE d.DeptNum = :num")
 public class DeptPair {
 	@Id
 	@GeneratedValue

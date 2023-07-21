@@ -2,6 +2,10 @@ package controller;
 
 import java.io.IOException;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +37,19 @@ public class ShowDept extends HttpServlet {
 
 		else {
 
-			DeptPair deptPair = new DeptPair(num, deptNumMapper.findDept(num));
-			request.setAttribute("key", deptPair);
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+			EntityManager em2 = emf.createEntityManager();
+
+			TypedQuery<DeptPair> tq = (TypedQuery<DeptPair>) em2.createNamedQuery("dept.fetch", DeptPair.class);
+			tq.setParameter("num", num);
+			DeptPair m = tq.getSingleResult();
+
+			// DeptPair deptPair = new DeptPair(num, deptNumMapper.findDept(num));
+			request.setAttribute("key", m);
 			request.getRequestDispatcher("/WEB-INF/results/show-departement.jsp").forward(request, response);
+
+			em2.close();
+			emf.close();
 		}
 	}
 

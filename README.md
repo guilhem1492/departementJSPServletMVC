@@ -16,3 +16,5 @@ git clone https://github.com/guilhem1492/departementJSPServletMVC.git
 Importez le et lancer le serveur sur l'index.jsp.
 
 # Reste à faire
+
+Supprimer et ajouter des départements ainsiq qu'un test unitaire.
