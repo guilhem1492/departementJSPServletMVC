@@ -30,6 +30,10 @@ public class DeptPair {
 		return DeptName;
 	}
 
+	public long getDeptId() {
+		return id;
+	}
+
 	public void setDeptNum(String deptNum) {
 		DeptNum = deptNum;
 	}

@@ -36,7 +36,6 @@ public class ShowDept extends HttpServlet {
 		}
 
 		else {
-
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 			EntityManager em2 = emf.createEntityManager();
 

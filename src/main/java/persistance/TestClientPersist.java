@@ -38,6 +38,11 @@ public class TestClientPersist {
 				em.persist(d);
 			}
 
+//			DeptPair d = new DeptPair();
+//			d.setDeptNum("999");
+//			d.setDeptName("Néant");
+//			em.persist(d);
+
 			txn.commit();
 		} catch (Exception e) {
 			if (txn != null) {
